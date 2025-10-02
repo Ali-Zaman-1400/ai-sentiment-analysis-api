@@ -1,0 +1,23 @@
+project:
+  name: ai-sentiment-analysis
+paths:
+  raw_dataset: data/raw/sentiment_dataset.csv
+  processed_dataset: data/processed/sentiment_clean.csv
+  model_dir: data/models
+  model_file: data/models/sentiment_model.joblib
+  vectorizer_file: data/models/tfidf_vectorizer.joblib
+  report_dir: data/models/reports
+  log_file: logs/app.log
+model:
+  type: logistic_regression
+  params:
+    C: 1.0
+    max_iter: 400
+preprocessing:
+  lowercase: true
+  remove_punct: true
+  remove_stopwords: true
+  lemmatize: true
+api:
+  host: 127.0.0.1
+  port: 8000
